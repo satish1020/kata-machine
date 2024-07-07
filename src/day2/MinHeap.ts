@@ -2,12 +2,12 @@
 
 export default function MinHeap() {
     let length: number = 0;
-    let data: number[] =[];
+    let data: number[] = [];
 
     // each of the nodes are given an index. the parent of 5 and 6 is Math.Floor(5-1/2) and Math.floor(6-1/2) which is 2. So 5 and 6
     // have same parent 2.
     const getParentIndex = (index: number): number => {
-        return Math.floor(index - 1 / 2);
+        return Math.floor((index - 1) / 2);
     };
 
     // left child of first node is 2*1+ 1 = 2
@@ -87,7 +87,6 @@ export default function MinHeap() {
         length++;
     };
 
-
     //In minimum heap.
     // we delete the first element of an array and return it.
     // Then we take the last element of the array and insert at the first element or head position and then heapify down.
@@ -114,52 +113,33 @@ export default function MinHeap() {
         heapifyDown(0);
         return output;
     };
-    
 
-    const performOperation = (): void =>{
-        insertValue(5)
-        console.log('***insert1', data);
-        insertValue(3)
-        console.log('***insert2', data);
-        insertValue(69)
-        console.log('***insert3', data);
-        insertValue(420)
-        console.log('***insert4', data);
-        insertValue(4)
-        console.log('***insert5', data);
-        insertValue(1)
-        console.log('***insert6', data);
-        insertValue(8)
-        console.log('***insert7', data);
-        insertValue(7)
-        console.log('***insert8', data);
-        console.log('***Insert length', length)
+    const performOperation = (): void => {
+        insertValue(5);
+        insertValue(3);
+        insertValue(69);
+        insertValue(420);
+        insertValue(4);
+        insertValue(1);
+        insertValue(8);
+        insertValue(7);
 
-        deleteValue()
-        console.log('***delete1', data)
-        deleteValue()
-        console.log('***delete2', data)
-        deleteValue()
-        console.log('***delete3', data)
-        deleteValue()
-        console.log('***delete4', data)
-        deleteValue()
-        console.log('***delete5', data)
-        deleteValue()
-        console.log('***delete6', data)
-        deleteValue()
-        console.log('***delete7', data)
-        deleteValue()
-        console.log('***delete8', data)
-        console.log('***Delete length', length)
-    }
+        deleteValue();
+        deleteValue();
+        deleteValue();
+        deleteValue();
+        deleteValue();
+        deleteValue();
+        deleteValue();
+        deleteValue();
+    };
 
-    console.log('***insert final output', length)
+    console.log("***insert final output", length);
 
-    return{
+    return {
         insertValue,
         deleteValue,
         length,
-        performOperation
-    }
+        performOperation,
+    };
 }
